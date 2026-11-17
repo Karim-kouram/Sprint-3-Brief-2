@@ -1,0 +1,795 @@
+{
+  "creatures": [
+    {
+      "id": 1,
+      "numero": "#001",
+      "name": "Bulbizarre",
+      "type": "Plante",
+      "stats": {
+        "hp": 45,
+        "attack": 49,
+        "defense": 49
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
+      "description": "Une graine pousse sur son dos et grandit avec lui."
+    },
+    {
+      "id": 2,
+      "numero": "#002",
+      "name": "Herbizarre",
+      "type": "Plante",
+      "stats": {
+        "hp": 60,
+        "attack": 62,
+        "defense": 63
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png",
+      "description": "Le bourgeon sur son dos grandit en absorbant la lumière."
+    },
+    {
+      "id": 3,
+      "numero": "#003",
+      "name": "Florizarre",
+      "type": "Plante",
+      "stats": {
+        "hp": 80,
+        "attack": 82,
+        "defense": 83
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png",
+      "description": "Une grande fleur s'épanouit sur son dos au soleil."
+    },
+    {
+      "id": 4,
+      "numero": "#004",
+      "name": "Salamèche",
+      "type": "Feu",
+      "stats": {
+        "hp": 39,
+        "attack": 52,
+        "defense": 43
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
+      "description": "La flamme au bout de sa queue indique son état de santé."
+    },
+    {
+      "id": 5,
+      "numero": "#005",
+      "name": "Reptincel",
+      "type": "Feu",
+      "stats": {
+        "hp": 58,
+        "attack": 64,
+        "defense": 58
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png",
+      "description": "Il devient agressif lorsqu'il rencontre un adversaire puissant."
+    },
+    {
+      "id": 6,
+      "numero": "#006",
+      "name": "Dracaufeu",
+      "type": "Feu",
+      "stats": {
+        "hp": 78,
+        "attack": 84,
+        "defense": 78
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png",
+      "description": "Il crache des flammes capables de faire fondre la roche."
+    },
+    {
+      "id": 7,
+      "numero": "#007",
+      "name": "Carapuce",
+      "type": "Eau",
+      "stats": {
+        "hp": 44,
+        "attack": 48,
+        "defense": 65
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
+      "description": "Il se protège grâce à sa carapace résistante."
+    },
+    {
+      "id": 8,
+      "numero": "#008",
+      "name": "Carabaffe",
+      "type": "Eau",
+      "stats": {
+        "hp": 59,
+        "attack": 63,
+        "defense": 80
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/008.png",
+      "description": "Sa queue touffue est un signe de longévité."
+    },
+    {
+      "id": 9,
+      "numero": "#009",
+      "name": "Tortank",
+      "type": "Eau",
+      "stats": {
+        "hp": 79,
+        "attack": 83,
+        "defense": 100
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/009.png",
+      "description": "Ses canons projettent des jets d'eau très puissants."
+    },
+    {
+      "id": 10,
+      "numero": "#010",
+      "name": "Chenipan",
+      "type": "Insecte",
+      "stats": {
+        "hp": 45,
+        "attack": 30,
+        "defense": 35
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png",
+      "description": "Il se nourrit de feuilles et avance grâce à ses petites pattes."
+    },
+    {
+      "id": 11,
+      "numero": "#011",
+      "name": "Chrysacier",
+      "type": "Insecte",
+      "stats": {
+        "hp": 50,
+        "attack": 20,
+        "defense": 55
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/011.png",
+      "description": "Sa carapace dure le protège pendant sa transformation."
+    },
+    {
+      "id": 12,
+      "numero": "#012",
+      "name": "Papilusion",
+      "type": "Insecte",
+      "stats": {
+        "hp": 60,
+        "attack": 45,
+        "defense": 50
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/012.png",
+      "description": "Ses ailes couvertes de poudre lui permettent de voler sous la pluie."
+    },
+    {
+      "id": 13,
+      "numero": "#013",
+      "name": "Aspicot",
+      "type": "Insecte",
+      "stats": {
+        "hp": 40,
+        "attack": 35,
+        "defense": 30
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.png",
+      "description": "Il possède un petit dard empoisonné sur la tête."
+    },
+    {
+      "id": 14,
+      "numero": "#014",
+      "name": "Coconfort",
+      "type": "Insecte",
+      "stats": {
+        "hp": 45,
+        "attack": 25,
+        "defense": 50
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/014.png",
+      "description": "Il reste immobile pendant que son corps évolue."
+    },
+    {
+      "id": 15,
+      "numero": "#015",
+      "name": "Dardargnan",
+      "type": "Insecte",
+      "stats": {
+        "hp": 65,
+        "attack": 90,
+        "defense": 40
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/015.png",
+      "description": "Ses deux dards sont redoutables au combat."
+    },
+    {
+      "id": 16,
+      "numero": "#016",
+      "name": "Roucool",
+      "type": "Normal",
+      "stats": {
+        "hp": 40,
+        "attack": 45,
+        "defense": 40
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png",
+      "description": "Il préfère éviter les combats et chercher sa nourriture."
+    },
+    {
+      "id": 17,
+      "numero": "#017",
+      "name": "Roucoups",
+      "type": "Normal",
+      "stats": {
+        "hp": 63,
+        "attack": 60,
+        "defense": 55
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/017.png",
+      "description": "Il surveille son territoire depuis le ciel."
+    },
+    {
+      "id": 18,
+      "numero": "#018",
+      "name": "Roucarnage",
+      "type": "Normal",
+      "stats": {
+        "hp": 83,
+        "attack": 80,
+        "defense": 75
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/018.png",
+      "description": "Il vole à grande vitesse et repère ses proies de loin."
+    },
+    {
+      "id": 19,
+      "numero": "#019",
+      "name": "Rattata",
+      "type": "Normal",
+      "stats": {
+        "hp": 30,
+        "attack": 56,
+        "defense": 35
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/019.png",
+      "description": "Il ronge presque tout et s'adapte facilement à son environnement."
+    },
+    {
+      "id": 20,
+      "numero": "#020",
+      "name": "Rattatac",
+      "type": "Normal",
+      "stats": {
+        "hp": 55,
+        "attack": 81,
+        "defense": 60
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/020.png",
+      "description": "Ses dents robustes repoussent continuellement."
+    },
+    {
+      "id": 21,
+      "numero": "#021",
+      "name": "Piafabec",
+      "type": "Normal",
+      "stats": {
+        "hp": 40,
+        "attack": 60,
+        "defense": 30
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/021.png",
+      "description": "Il pousse des cris perçants pour défendre son territoire."
+    },
+    {
+      "id": 22,
+      "numero": "#022",
+      "name": "Rapasdepic",
+      "type": "Normal",
+      "stats": {
+        "hp": 65,
+        "attack": 90,
+        "defense": 65
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/022.png",
+      "description": "Son long bec lui permet de saisir ses proies avec précision."
+    },
+    {
+      "id": 23,
+      "numero": "#023",
+      "name": "Abo",
+      "type": "Poison",
+      "stats": {
+        "hp": 35,
+        "attack": 60,
+        "defense": 44
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/023.png",
+      "description": "Il se déplace silencieusement dans les hautes herbes."
+    },
+    {
+      "id": 24,
+      "numero": "#024",
+      "name": "Arbok",
+      "type": "Poison",
+      "stats": {
+        "hp": 60,
+        "attack": 95,
+        "defense": 69
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/024.png",
+      "description": "Les motifs sur son capuchon intimident ses adversaires."
+    },
+    {
+      "id": 25,
+      "numero": "#025",
+      "name": "Pikachu",
+      "type": "Électrik",
+      "stats": {
+        "hp": 35,
+        "attack": 55,
+        "defense": 40
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
+      "description": "Il stocke de l'électricité dans ses joues."
+    },
+    {
+      "id": 26,
+      "numero": "#026",
+      "name": "Raichu",
+      "type": "Électrik",
+      "stats": {
+        "hp": 60,
+        "attack": 90,
+        "defense": 55
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/026.png",
+      "description": "Il libère de puissantes décharges électriques."
+    },
+    {
+      "id": 27,
+      "numero": "#027",
+      "name": "Sabelette",
+      "type": "Sol",
+      "stats": {
+        "hp": 50,
+        "attack": 75,
+        "defense": 85
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/027.png",
+      "description": "Il se roule en boule pour se protéger des attaques."
+    },
+    {
+      "id": 28,
+      "numero": "#028",
+      "name": "Sablaireau",
+      "type": "Sol",
+      "stats": {
+        "hp": 75,
+        "attack": 100,
+        "defense": 110
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/028.png",
+      "description": "Ses griffes acérées lui servent à creuser et à combattre."
+    },
+    {
+      "id": 29,
+      "numero": "#029",
+      "name": "Nidoran♀",
+      "type": "Poison",
+      "stats": {
+        "hp": 55,
+        "attack": 47,
+        "defense": 52
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/029.png",
+      "description": "Ses petites oreilles détectent les sons les plus faibles."
+    },
+    {
+      "id": 30,
+      "numero": "#030",
+      "name": "Nidorina",
+      "type": "Poison",
+      "stats": {
+        "hp": 70,
+        "attack": 62,
+        "defense": 67
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/030.png",
+      "description": "Elle devient calme lorsqu'elle est entourée de ses proches."
+    },
+    {
+      "id": 31,
+      "numero": "#031",
+      "name": "Nidoqueen",
+      "type": "Poison",
+      "stats": {
+        "hp": 90,
+        "attack": 92,
+        "defense": 87
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/031.png",
+      "description": "Son corps robuste la protège pendant les combats."
+    },
+    {
+      "id": 32,
+      "numero": "#032",
+      "name": "Nidoran♂",
+      "type": "Poison",
+      "stats": {
+        "hp": 46,
+        "attack": 57,
+        "defense": 40
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/032.png",
+      "description": "Sa corne frontale sécrète un puissant poison."
+    },
+    {
+      "id": 33,
+      "numero": "#033",
+      "name": "Nidorino",
+      "type": "Poison",
+      "stats": {
+        "hp": 61,
+        "attack": 72,
+        "defense": 57
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/033.png",
+      "description": "Il attaque avec sa corne lorsqu'il se sent menacé."
+    },
+    {
+      "id": 34,
+      "numero": "#034",
+      "name": "Nidoking",
+      "type": "Poison",
+      "stats": {
+        "hp": 81,
+        "attack": 102,
+        "defense": 77
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/034.png",
+      "description": "Sa force physique et sa queue puissante en font un adversaire redoutable."
+    },
+    {
+      "id": 35,
+      "numero": "#035",
+      "name": "Mélofée",
+      "type": "Fée",
+      "stats": {
+        "hp": 70,
+        "attack": 45,
+        "defense": 48
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/035.png",
+      "description": "On raconte qu'il danse sous la lumière de la lune."
+    },
+    {
+      "id": 36,
+      "numero": "#036",
+      "name": "Mélodelfe",
+      "type": "Fée",
+      "stats": {
+        "hp": 95,
+        "attack": 70,
+        "defense": 73
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/036.png",
+      "description": "Ses oreilles sensibles lui permettent d'entendre de très loin."
+    },
+    {
+      "id": 37,
+      "numero": "#037",
+      "name": "Goupix",
+      "type": "Feu",
+      "stats": {
+        "hp": 38,
+        "attack": 41,
+        "defense": 40
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/037.png",
+      "description": "Il naît avec une seule queue qui se divise en grandissant."
+    },
+    {
+      "id": 38,
+      "numero": "#038",
+      "name": "Feunard",
+      "type": "Feu",
+      "stats": {
+        "hp": 73,
+        "attack": 76,
+        "defense": 75
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/038.png",
+      "description": "Ses neuf queues sont associées à de nombreuses légendes."
+    },
+    {
+      "id": 39,
+      "numero": "#039",
+      "name": "Rondoudou",
+      "type": "Normal",
+      "stats": {
+        "hp": 115,
+        "attack": 45,
+        "defense": 20
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/039.png",
+      "description": "Son chant mélodieux endort souvent ceux qui l'écoutent."
+    },
+    {
+      "id": 40,
+      "numero": "#040",
+      "name": "Grodoudou",
+      "type": "Normal",
+      "stats": {
+        "hp": 140,
+        "attack": 70,
+        "defense": 45
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/040.png",
+      "description": "Son corps souple peut rebondir comme un ballon."
+    },
+    {
+      "id": 41,
+      "numero": "#041",
+      "name": "Nosferapti",
+      "type": "Poison",
+      "stats": {
+        "hp": 40,
+        "attack": 45,
+        "defense": 35
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/041.png",
+      "description": "Il utilise les ultrasons pour se déplacer dans l'obscurité."
+    },
+    {
+      "id": 42,
+      "numero": "#042",
+      "name": "Nosferalto",
+      "type": "Poison",
+      "stats": {
+        "hp": 75,
+        "attack": 80,
+        "defense": 70
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/042.png",
+      "description": "Il vole rapidement grâce à ses grandes ailes."
+    },
+    {
+      "id": 43,
+      "numero": "#043",
+      "name": "Mystherbe",
+      "type": "Plante",
+      "stats": {
+        "hp": 45,
+        "attack": 50,
+        "defense": 55
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/043.png",
+      "description": "Il se cache dans l'herbe pendant la journée."
+    },
+    {
+      "id": 44,
+      "numero": "#044",
+      "name": "Ortide",
+      "type": "Plante",
+      "stats": {
+        "hp": 60,
+        "attack": 65,
+        "defense": 70
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/044.png",
+      "description": "Son odeur particulière peut surprendre ses adversaires."
+    },
+    {
+      "id": 45,
+      "numero": "#045",
+      "name": "Rafflesia",
+      "type": "Plante",
+      "stats": {
+        "hp": 75,
+        "attack": 80,
+        "defense": 85
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/045.png",
+      "description": "Sa grande fleur libère des spores depuis ses pétales."
+    },
+    {
+      "id": 46,
+      "numero": "#046",
+      "name": "Paras",
+      "type": "Insecte",
+      "stats": {
+        "hp": 35,
+        "attack": 70,
+        "defense": 55
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/046.png",
+      "description": "Deux champignons poussent sur son dos."
+    },
+    {
+      "id": 47,
+      "numero": "#047",
+      "name": "Parasect",
+      "type": "Insecte",
+      "stats": {
+        "hp": 60,
+        "attack": 95,
+        "defense": 80
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/047.png",
+      "description": "Le champignon sur son dos contrôle presque tous ses mouvements."
+    },
+    {
+      "id": 48,
+      "numero": "#048",
+      "name": "Mimitoss",
+      "type": "Insecte",
+      "stats": {
+        "hp": 60,
+        "attack": 55,
+        "defense": 50
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/048.png",
+      "description": "Ses grands yeux détectent les mouvements dans l'obscurité."
+    },
+    {
+      "id": 49,
+      "numero": "#049",
+      "name": "Aéromite",
+      "type": "Insecte",
+      "stats": {
+        "hp": 70,
+        "attack": 65,
+        "defense": 60
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/049.png",
+      "description": "Ses ailes libèrent une poudre colorée."
+    },
+    {
+      "id": 50,
+      "numero": "#050",
+      "name": "Taupiqueur",
+      "type": "Sol",
+      "stats": {
+        "hp": 10,
+        "attack": 55,
+        "defense": 25
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/050.png",
+      "description": "Il creuse des tunnels sous la terre."
+    },
+    {
+      "id": 51,
+      "numero": "#051",
+      "name": "Triopikeur",
+      "type": "Sol",
+      "stats": {
+        "hp": 35,
+        "attack": 100,
+        "defense": 50
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/051.png",
+      "description": "Ses trois têtes creusent le sol à grande vitesse."
+    },
+    {
+      "id": 52,
+      "numero": "#052",
+      "name": "Miaouss",
+      "type": "Normal",
+      "stats": {
+        "hp": 40,
+        "attack": 45,
+        "defense": 35
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/052.png",
+      "description": "Il aime les objets brillants et les pièces rondes."
+    },
+    {
+      "id": 53,
+      "numero": "#053",
+      "name": "Persian",
+      "type": "Normal",
+      "stats": {
+        "hp": 65,
+        "attack": 70,
+        "defense": 60
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/053.png",
+      "description": "Il se déplace avec élégance et une grande agilité."
+    },
+    {
+      "id": 54,
+      "numero": "#054",
+      "name": "Psykokwak",
+      "type": "Eau",
+      "stats": {
+        "hp": 50,
+        "attack": 52,
+        "defense": 48
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/054.png",
+      "description": "Il souffre souvent de maux de tête mystérieux."
+    },
+    {
+      "id": 55,
+      "numero": "#055",
+      "name": "Akwakwak",
+      "type": "Eau",
+      "stats": {
+        "hp": 80,
+        "attack": 82,
+        "defense": 78
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/055.png",
+      "description": "Il nage avec aisance et utilise ses pouvoirs psychiques."
+    },
+    {
+      "id": 56,
+      "numero": "#056",
+      "name": "Férosinge",
+      "type": "Combat",
+      "stats": {
+        "hp": 40,
+        "attack": 80,
+        "defense": 35
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/056.png",
+      "description": "Il est nerveux et peut se mettre en colère très rapidement."
+    },
+    {
+      "id": 57,
+      "numero": "#057",
+      "name": "Colossinge",
+      "type": "Combat",
+      "stats": {
+        "hp": 65,
+        "attack": 105,
+        "defense": 60
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/057.png",
+      "description": "Sa colère ne retombe presque jamais."
+    },
+    {
+      "id": 58,
+      "numero": "#058",
+      "name": "Caninos",
+      "type": "Feu",
+      "stats": {
+        "hp": 55,
+        "attack": 70,
+        "defense": 45
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/058.png",
+      "description": "Il est loyal et possède un odorat très développé."
+    },
+    {
+      "id": 59,
+      "numero": "#059",
+      "name": "Arcanin",
+      "type": "Feu",
+      "stats": {
+        "hp": 90,
+        "attack": 110,
+        "defense": 80
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/059.png",
+      "description": "Il court à grande vitesse et impressionne par sa prestance."
+    },
+    {
+      "id": 60,
+      "numero": "#060",
+      "name": "Ptitard",
+      "type": "Eau",
+      "stats": {
+        "hp": 40,
+        "attack": 50,
+        "defense": 40
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/060.png",
+      "description": "Son ventre translucide laisse voir ses organes internes."
+    }
+  ],
+  "teams": [
+    {
+      "id": 1,
+      "name": "Équipe Flamme",
+      "creatureIds": [
+        4,
+        5,
+        6
+      ]
+    }
+  ]
+}

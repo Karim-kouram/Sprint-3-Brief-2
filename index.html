@@ -43,11 +43,12 @@
       </div>
       <div id="filters" role="group" aria-label="Filtrer par type" class="flex  flex-wrap gap-2 overflow-auto">
           <button type="button" class="chip  shrink-0">Tous</button>
-          <button type="button" class="chip shrink-0">Fire</button>
-          <button type="button" class="chip shrink-0">Water</button>
-          <button type="button" class="chip shrink-0">Grass</button>
-          <button type="button" class="chip shrink-0">Bug</button>
+          <button type="button" class="chip shrink-0">Plante</button>
+          <button type="button" class="chip shrink-0">Feu</button>
+          <button type="button" class="chip shrink-0">Eau</button>
+          <button type="button" class="chip shrink-0">Insecte</button>
           <button type="button" class="chip shrink-0">Normal</button>
+          <button type="button" class="chip shrink-0">Poison</button>
           <button id="filterFavorites" type="button" class="btn-outline chip shrink-0">Favoris</button>
           
           
@@ -91,14 +92,15 @@
       </aside>
     </div>
 
-    <div class="flex justify-center items-center">
-      <button
-          id="loadButton"
-          class="rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-700 hover:scale-105 active:scale-95"
-      >
-          Charger plus
-      </button>
+    
+    <div id="pagination" class="flex justify-center items-center gap-3 mt-8">
+        <button data-page="1" class="page-btn">1</button>
+        <button data-page="2" class="page-btn">2</button>
+        <button data-page="3" class="page-btn">3</button>
+        <button data-page="4" class="page-btn">4</button>
+        <button data-page="5" class="page-btn">5</button>
     </div>
+
 
     <!-- ===================== FORMULAIRE DE CRÉATION ===================== -->
     <section id="create" aria-label="Nouvelle créature" class="flex flex-col gap-6 rounded-card bg-white p-8">
@@ -161,8 +163,8 @@
   </footer>
 
   <!-- data.js (à créer) doit être chargé AVANT script.js -->
-  <script type="module" src="./src/services/api.js"></script>
-  <script type="module" src="./src/ui.js"></script>
-  <script type="module" src="./src/main.js"></script>
+  <script type="module" src="./js/api.js"></script>
+  <script type="module" src="./js/ui.js"></script>
+  <script type="module" src="./js/main.js"></script>
 </body>
 </html>
