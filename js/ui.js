@@ -310,17 +310,17 @@ export function hideMessage() {
 // -------------------------------------------------------------
 
 
-export function updatePagination(currentPage) {
-    document.querySelectorAll(".page-btn").forEach(button => {
-        const page = Number(button.dataset.page);
+// export function updatePagination(currentPage) {
+//     document.querySelectorAll(".page-btn").forEach(button => {
+//         const page = Number(button.dataset.page);
 
-        button.className = `
-            page-btn rounded-lg px-5 py-3 font-semibold
-            transition duration-300
-            ${page === currentPage
-                ? "bg-blue-600 text-white shadow-md"
-                : "bg-gray-200 text-gray-700 hover:bg-blue-100"
-            }
-        `;
-    });
-}
+//         button.className = `
+//             page-btn rounded-lg px-5 py-3 font-semibold
+//             transition duration-300
+//             ${page === currentPage
+//                 ? "bg-blue-600 text-white shadow-md"
+//                 : "bg-gray-200 text-gray-700 hover:bg-blue-100"
+//             }
+//         `;
+//     });
+// }

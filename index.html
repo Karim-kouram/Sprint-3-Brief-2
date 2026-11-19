@@ -54,6 +54,12 @@
           
       </div>
     </section>
+    <div><select id="sortSelect" class="rounded-lg border px-4 py-2">
+    <option value="">Trier par</option>
+    <option value="name-asc">Nom A → Z</option>
+    <option value="name-desc">Nom Z → A</option>
+    <option value="id-asc">Numéro</option>
+</select></div>
 
     <div class="flex flex-col md:flex-col lg:flex-col items-start gap-6 xl:flex-row">
 
@@ -93,13 +99,13 @@
     </div>
 
     
-    <div id="pagination" class="flex justify-center items-center gap-3 mt-8">
+    <!-- <div id="pagination" class="flex justify-center items-center gap-3 mt-8">
         <button data-page="1" class="page-btn">1</button>
         <button data-page="2" class="page-btn">2</button>
         <button data-page="3" class="page-btn">3</button>
         <button data-page="4" class="page-btn">4</button>
         <button data-page="5" class="page-btn">5</button>
-    </div>
+    </div> -->
 
 
     <!-- ===================== FORMULAIRE DE CRÉATION ===================== -->

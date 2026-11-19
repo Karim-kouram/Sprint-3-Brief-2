@@ -1,23 +1,8 @@
-// =============================================================
-// data.js — les créatures de VOTRE univers
-// =============================================================
-// TODO : remplissez ce tableau avec au moins 12 créatures
-// (Pokémon, Digimon ou Yu-Gi-Oh!), en respectant ce format :
-//
-// {
-//   id: "#001",                                   // "#" suivi de 3 chiffres
-//   name: "Exemple",                              // texte
-//   type: "Feu",                                  // une valeur d'une liste fixe
-//   level: "Base",                                // texte
-//   stats: { hp: 45, attack: 49, defence: 49 },   // 3 nombres de 0 à 999
-//   image: "https://example.com/001.png",         // lien https vers une image
-//   description: "Une courte description."        // 10 à 200 caractères
-// }
-//
-// Pensez à citer la source de vos images dans le README.
-
-
 const BASE_URL = "http://localhost:3000";
+
+// =====================================================
+// REQUEST GENERIQUE
+// =====================================================
 
 export async function request(method, route, body = null) {
     try {
@@ -26,7 +11,9 @@ export async function request(method, route, body = null) {
             headers: {
                 "Content-Type": "application/json"
             },
-            ...(body && { body: JSON.stringify(body) })
+            ...(body !== null && {
+                body: JSON.stringify(body)
+            })
         });
 
         if (!response.ok) {
@@ -42,67 +29,109 @@ export async function request(method, route, body = null) {
 }
 
 
+// =====================================================
+// GET TOUTES LES CREATURES
+// =====================================================
 
-
-
-
-export async function chargerPokemon(limit, page) {
-    const loadButton = document.getElementById("loadButton");
-
-    if (loadButton) loadButton.disabled = true;
-
-    try {
-        const data = await request(
-            "GET",
-            `/creatures?_page=${page}&_limit=${limit}`
-        );
-
-        return data;
-
-    } catch (error) {
-        console.log("Erreur lors du chargement :", error);
-        return [];
-
-    } finally {
-        if (loadButton) loadButton.disabled = false;
-    }
+export async function chargerPokemon() {
+    return await request("GET", "/creatures");
 }
 
 
-
+// =====================================================
+// FILTRER PAR TYPE
+// =====================================================
 
 export async function FiltrerPokemon(type) {
+    const params = new URLSearchParams();
 
-    try {
-        const data = await request(
-            "GET",
-            `/creatures?type=${type}`
-        );
-
-        return data;
-
-    } catch (error) {
-        console.log("Erreur lors du chargement :", error);
-        return [];
-
+    if (type && type !== "Tous") {
+        params.append("type", type);
     }
+
+    return await request(
+        "GET",
+        `/creatures?${params.toString()}`
+    );
 }
 
 
+// =====================================================
+// RECHERCHE + FILTRE
+// =====================================================
 
+export async function getCreature(name, type) {
+    const params = new URLSearchParams();
 
-export async function getCreature(name) {
-    try {
-        const data = await request(
-            "GET",
-            `/creatures?q=${name}`
-        );
-
-        return data;
-
-    } catch (error) {
-        console.log("Erreur lors du chargement :", error);
-        return [];
-
+    // Recherche par nom
+    if (name) {
+        params.append("q", name);
     }
+
+    // Filtre par type
+    if (type && type !== "Tous") {
+        params.append("type", type);
+    }
+
+    return await request(
+        "GET",
+        `/creatures?${params.toString()}`
+    );
+}
+
+
+// =====================================================
+// RECHERCHE + FILTRE + TRI
+// =====================================================
+
+export async function FiltrerApi(search, type, sort) {
+    const params = new URLSearchParams();
+
+    // Recherche
+    if (search) {
+        params.append("q", search);
+    }
+
+    // Filtre par type
+    if (type && type !== "Tous") {
+        params.append("type", type);
+    }
+
+    // Tri
+    if (sort) {
+        const [sortField, order] = sort.split("-");
+
+        params.append("_sort", sortField);
+        params.append("_order", order);
+    }
+
+    return await request(
+        "GET",
+        `/creatures?${params.toString()}`
+    );
+}
+
+// =====================================================
+// GET UNE CREATURE PAR ID
+// =====================================================
+
+export async function getCreatureById(id) {
+    return await request(
+        "GET",
+        `/creatures/${encodeURIComponent(id)}`
+    );
+}
+
+
+// =====================================================
+// AJOUTER UNE CREATURE
+// POST /creatures
+// =====================================================
+
+export async function ajouterCreature(data) {
+    return await request(
+        "POST",
+        "/creatures",
+        data
+    );
 }
