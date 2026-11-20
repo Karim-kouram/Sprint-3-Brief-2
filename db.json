@@ -5,6 +5,7 @@
       "numero": "#001",
       "name": "Bulbizarre",
       "type": "Plante",
+      "level": "Base",
       "stats": {
         "hp": 45,
         "attack": 49,
@@ -18,6 +19,7 @@
       "numero": "#002",
       "name": "Herbizarre",
       "type": "Plante",
+      "level": "Base",
       "stats": {
         "hp": 60,
         "attack": 62,
@@ -27,23 +29,11 @@
       "description": "Le bourgeon sur son dos grandit en absorbant la lumière."
     },
     {
-      "id": 3,
-      "numero": "#003",
-      "name": "Florizarre",
-      "type": "Plante",
-      "stats": {
-        "hp": 80,
-        "attack": 82,
-        "defense": 83
-      },
-      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png",
-      "description": "Une grande fleur s'épanouit sur son dos au soleil."
-    },
-    {
       "id": 4,
       "numero": "#004",
       "name": "Salamèche",
       "type": "Feu",
+      "level": "Base",
       "stats": {
         "hp": 39,
         "attack": 52,
@@ -57,6 +47,7 @@
       "numero": "#005",
       "name": "Reptincel",
       "type": "Feu",
+      "level": "Base",
       "stats": {
         "hp": 58,
         "attack": 64,
@@ -70,6 +61,7 @@
       "numero": "#006",
       "name": "Dracaufeu",
       "type": "Feu",
+      "level": "Base",
       "stats": {
         "hp": 78,
         "attack": 84,
@@ -83,6 +75,7 @@
       "numero": "#007",
       "name": "Carapuce",
       "type": "Eau",
+      "level": "Base",
       "stats": {
         "hp": 44,
         "attack": 48,
@@ -96,6 +89,7 @@
       "numero": "#008",
       "name": "Carabaffe",
       "type": "Eau",
+      "level": "Base",
       "stats": {
         "hp": 59,
         "attack": 63,
@@ -109,6 +103,7 @@
       "numero": "#009",
       "name": "Tortank",
       "type": "Eau",
+      "level": "Base",
       "stats": {
         "hp": 79,
         "attack": 83,
@@ -122,6 +117,7 @@
       "numero": "#010",
       "name": "Chenipan",
       "type": "Insecte",
+      "level": "Base",
       "stats": {
         "hp": 45,
         "attack": 30,
@@ -135,6 +131,7 @@
       "numero": "#011",
       "name": "Chrysacier",
       "type": "Insecte",
+      "level": "Base",
       "stats": {
         "hp": 50,
         "attack": 20,
@@ -148,6 +145,7 @@
       "numero": "#012",
       "name": "Papilusion",
       "type": "Insecte",
+      "level": "Base",
       "stats": {
         "hp": 60,
         "attack": 45,
@@ -161,6 +159,7 @@
       "numero": "#013",
       "name": "Aspicot",
       "type": "Insecte",
+      "level": "Base",
       "stats": {
         "hp": 40,
         "attack": 35,
@@ -174,6 +173,7 @@
       "numero": "#014",
       "name": "Coconfort",
       "type": "Insecte",
+      "level": "Base",
       "stats": {
         "hp": 45,
         "attack": 25,
@@ -187,6 +187,7 @@
       "numero": "#015",
       "name": "Dardargnan",
       "type": "Insecte",
+      "level": "Base",
       "stats": {
         "hp": 65,
         "attack": 90,
@@ -200,6 +201,7 @@
       "numero": "#016",
       "name": "Roucool",
       "type": "Normal",
+      "level": "Base",
       "stats": {
         "hp": 40,
         "attack": 45,
@@ -213,6 +215,7 @@
       "numero": "#017",
       "name": "Roucoups",
       "type": "Normal",
+      "level": "Base",
       "stats": {
         "hp": 63,
         "attack": 60,
@@ -226,6 +229,7 @@
       "numero": "#018",
       "name": "Roucarnage",
       "type": "Normal",
+      "level": "Base",
       "stats": {
         "hp": 83,
         "attack": 80,
@@ -239,6 +243,7 @@
       "numero": "#019",
       "name": "Rattata",
       "type": "Normal",
+      "level": "Base",
       "stats": {
         "hp": 30,
         "attack": 56,
@@ -252,6 +257,7 @@
       "numero": "#020",
       "name": "Rattatac",
       "type": "Normal",
+      "level": "Base",
       "stats": {
         "hp": 55,
         "attack": 81,
@@ -265,6 +271,7 @@
       "numero": "#021",
       "name": "Piafabec",
       "type": "Normal",
+      "level": "Base",
       "stats": {
         "hp": 40,
         "attack": 60,
@@ -278,6 +285,7 @@
       "numero": "#022",
       "name": "Rapasdepic",
       "type": "Normal",
+      "level": "Base",
       "stats": {
         "hp": 65,
         "attack": 90,
@@ -291,6 +299,7 @@
       "numero": "#023",
       "name": "Abo",
       "type": "Poison",
+      "level": "Base",
       "stats": {
         "hp": 35,
         "attack": 60,
@@ -304,6 +313,7 @@
       "numero": "#024",
       "name": "Arbok",
       "type": "Poison",
+      "level": "Base",
       "stats": {
         "hp": 60,
         "attack": 95,
@@ -311,6 +321,20 @@
       },
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/024.png",
       "description": "Les motifs sur son capuchon intimident ses adversaires."
+    },
+    {
+      "id": "025",
+      "numero": "#025",
+      "name": "karim kouram",
+      "type": "Plante",
+      "level": "base",
+      "stats": {
+        "hp": 35,
+        "attack": 85,
+        "defense": 44
+      },
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
+      "description": "hello world"
     }
   ],
   "teams": [

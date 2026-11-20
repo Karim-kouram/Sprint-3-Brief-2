@@ -39,13 +39,15 @@ export function afficherPokemon(Tableau) {
             fée: "bg-pink-300 text-black"
         };
 
-        const typeColor = typeColors[pokemon.type] || "bg-gray-200 text-black";
+        const typeColor = typeColors[pokemon.type.toLowerCase()] || "bg-gray-200 text-black";
 
 
         article.innerHTML = `
     <div class="relative flex h-36 items-center justify-center rounded-xl bg-brand-light">
             <img src="${pokemon.image}" alt="logo" class="h-[150px] w-[150px] text-muted">
             <span class="absolute left-3 top-2 font-mono text-sm text-muted">${pokemon.numero}</span>
+            <span class="absolute right-3 top-2 text-sm btn-edit" data-id="${pokemon.id}"><i class="fa-solid fa-pencil"></i></span>
+            <span class="absolute right-3 bottom-2 text-sm btn-delete" data-id="${pokemon.id}"><i class="fa-solid fa-trash"></i></span>
           </div>
           <div class="flex items-center justify-between gap-2">
             <h3 class="font-display text-xl font-semibold">${pokemon.name}</h3>
@@ -101,7 +103,7 @@ export function afficherDetail(pokemon) {
         fée: "bg-pink-300 text-black"
     };
 
-    const typeColor = typeColors[pokemon.type] || "bg-gray-200 text-black";
+    const typeColor = typeColors[pokemon.type.toLowerCase()] || "bg-gray-200 text-black";
 
     Section.innerHTML = `
     <article data-id="${pokemon.id}" class="card"> 
@@ -146,9 +148,9 @@ export function afficherDetail(pokemon) {
                 <span class="font-bold">Défense</span>
                 <span class="h-3 rounded-full bg-ground">
                     <span class="block h-3 rounded-full ${typeColor}"
-                        style="width:${pokemon.stats.defence}%;"></span>
+                        style="width:${pokemon.stats.defense}%;"></span>
                 </span>
-                <span class="text-right font-mono">${pokemon.stats.defence}</span>
+                <span class="text-right font-mono">${pokemon.stats.defense}</span>
             </div>
         </div>
         <div class="flex items-center justify-center">

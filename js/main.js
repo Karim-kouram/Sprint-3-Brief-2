@@ -20,7 +20,9 @@ import {
     getCreatureById,
     FiltrerPokemon,
     FiltrerApi,
-    ajouterCreature
+    ajouterCreature,
+    modifierCreature,
+    supprimerCreature
 } from "./api.js";
 
 import { setinitialCreatures, setCreatures, getinitialCreatures, getCreatures, addCreatures } from "./state.js";
@@ -110,7 +112,24 @@ let creatures = getCreatures();
 // // Page 1 au démarrage
 // updatePagination(currentPage);
 
+async function rechargerGrille() {
+    const search = searchNom.value.trim();
 
+    const filtreActif = document.querySelector("#filters .chip.Active");
+
+    const type = filtreActif
+        ? filtreActif.textContent.trim()
+        : "Tous";
+
+    const sort = sortSelect.value;
+
+    const data = await FiltrerApi(search, type, sort);
+
+    setCreatures(data);
+    afficherPokemon(data);
+
+    updateTeamButtons();
+}
 
 // -------------------------------------------------------------
 // 6. MON ÉQUIPE
@@ -130,6 +149,7 @@ Section.innerHTML = `
             </p>
         </div>
     `;
+
 
 // =====================================================
 // CLIC SUR LES CARDS
@@ -240,7 +260,7 @@ cardsSection.addEventListener("click", async function (e) {
 
 // Événement du bouton fermer
 Section.addEventListener("click", function (e) {
-    const creatures = getCreatures();
+    
     if (e.target.closest(".Annule")) {
         fermerDetail();
         return;
@@ -256,7 +276,7 @@ Section.addEventListener("click", function (e) {
     if (!article || !Section.contains(article)) return;
 
     const id = article.dataset.id;
-    const pokemon = creatures.find(p => p.id === id);
+    const pokemon = getCreatures().find(p => String(p.id) === String(id));
 
     if (!pokemon) return;
 
@@ -272,6 +292,54 @@ Section.addEventListener("click", function (e) {
 
 
 
+});
+
+
+cardsSection.addEventListener("click", async function (e) {
+    const btnDelete = e.target.closest(".btn-delete");
+
+    if (!btnDelete) return;
+
+    const id = btnDelete.dataset.id;
+
+    // Confirmation
+    const confirmation = confirm(
+        "Voulez-vous vraiment supprimer cette créature ?"
+    );
+
+    if (!confirmation) return;
+
+    try {
+        // État : envoi
+        btnDelete.disabled = true;
+
+        // DELETE depuis l'API
+        await supprimerCreature(id);
+
+        // Recharger les créatures
+        const data = await chargerPokemon();
+
+        setinitialCreatures(data);
+        setCreatures(data);
+
+        // Afficher la liste actualisée
+        afficherPokemon(data);
+
+        updateTeamButtons();
+
+        // État : succès
+        showMessage("Créature supprimée avec succès !");
+
+        // Recharger en gardant recherche, filtre et tri
+        await rechargerGrille();
+    } catch (error) {
+        console.error("Erreur lors de la suppression :", error);
+
+        showMessage("Erreur lors de la suppression de la créature.");
+    } finally {
+        // Fin de l'opération
+        btnDelete.disabled = false;
+    }
 });
 
 // =====================================================
@@ -432,17 +500,40 @@ export function validateCreature(data) {
         errors.attack = "Attack doit être entre 1 et 255.";
     }
 
-    // Defence
+    // defense
     if (
-        data.stats.defence < 1 ||
-        data.stats.defence > 255 ||
-        !Number.isInteger(data.stats.defence)
+        data.stats.defense < 1 ||
+        data.stats.defense > 255 ||
+        !Number.isInteger(data.stats.defense)
     ) {
-        errors.defence = "Defence doit être entre 1 et 255.";
+        errors.defense = "defense doit être entre 1 et 255.";
     }
 
     return errors;
 }
+
+
+
+// =====================================================
+// AJOUTER UNE CREATURE
+// =====================================================
+
+const form = document.getElementById("creature-form");
+
+const id = document.querySelector('[name="id"]');
+const name = document.querySelector('[name="name"]');
+const type = document.querySelector('[name="type"]');
+const level = document.querySelector('[name="level"]');
+
+const stat = document.querySelectorAll('[name="stat"]');
+
+const image = document.querySelector('[name="image"]');
+const description = document.querySelector('[name="description"]');
+
+const errorMessage = document.querySelectorAll(".error-message");
+
+const button = document.querySelector('button[type="submit"]');
+
 
 // =====================================================
 // BROUILLON SESSION STORAGE
@@ -456,6 +547,7 @@ function getFormData() {
 
     return {
         id: id.value,
+        numero : `#${String(id.value).padStart(3, "0")}`,
         name: name.value,
         type: type.value,
         level: level.value,
@@ -463,7 +555,7 @@ function getFormData() {
         stats: {
             hp: stat[0].value,
             attack: stat[1].value,
-            defence: stat[2].value
+            defense: stat[2].value
         },
 
         image: image.value,
@@ -500,7 +592,7 @@ function restoreDraft() {
 
     stat[0].value = data.stats?.hp || "";
     stat[1].value = data.stats?.attack || "";
-    stat[2].value = data.stats?.defence || "";
+    stat[2].value = data.stats?.defense || "";
 
     image.value = data.image || "";
     description.value = data.description || "";
@@ -509,27 +601,6 @@ function restoreDraft() {
 
 // Restaurer au démarrage
 restoreDraft();
-
-// =====================================================
-// AJOUTER UNE CREATURE
-// =====================================================
-
-const form = document.getElementById("creature-form");
-
-const id = document.querySelector('[name="id"]');
-const name = document.querySelector('[name="name"]');
-const type = document.querySelector('[name="type"]');
-const level = document.querySelector('[name="level"]');
-
-const stat = document.querySelectorAll('[name="stat"]');
-
-const image = document.querySelector('[name="image"]');
-const description = document.querySelector('[name="description"]');
-
-const errorMessage = document.querySelectorAll(".error-message");
-
-const button = document.querySelector('button[type="submit"]');
-
 
 // =====================================================
 // VALIDATION
@@ -542,7 +613,7 @@ function validateForm() {
     // Convertir les statistiques en nombres
     data.stats.hp = Number(data.stats.hp);
     data.stats.attack = Number(data.stats.attack);
-    data.stats.defence = Number(data.stats.defence);
+    data.stats.defense = Number(data.stats.defense);
 
     const errors = validateCreature(data);
 
@@ -583,9 +654,9 @@ function validateForm() {
         stat[1].style.border = "2px solid green";
     }
 
-    // Defence
-    if (errors.defence) {
-        errorMessage[6].textContent = errors.defence;
+    // defense
+    if (errors.defense) {
+        errorMessage[6].textContent = errors.defense;
         stat[2].style.border = "2px solid red";
     } else {
         stat[2].style.border = "2px solid green";
@@ -597,6 +668,92 @@ function validateForm() {
     return Object.keys(errors).length === 0;
 }
 
+
+
+// =====================================================
+// MODE MODIFICATION
+// =====================================================
+
+let editingCreatureId = null;
+
+// =====================================================
+// MODIFIER UNE CREATURE
+// =====================================================
+
+const idInput = id;
+const nameInput = name;
+const typeInput = type;
+const levelInput = level;
+
+const statInputs = stat;
+
+const imageInput = image;
+const descriptionInput = description;
+
+cardsSection.addEventListener("click", async function (e) {
+
+    const editButton = e.target.closest(".btn-edit");
+
+    if (!editButton) return;
+
+    const id = editButton.dataset.id;
+
+    try {
+
+        showLoading();
+        hideMessage();
+
+        // GET /creatures/:id
+        const pokemon = await getCreatureById(id);
+
+        // Activer le mode modification
+        editingCreatureId = pokemon.id;
+
+        // Remplir le formulaire
+        idInput.value = pokemon.id;
+        nameInput.value = pokemon.name;
+        typeInput.value = pokemon.type;
+        levelInput.value = pokemon.level;
+
+        statInputs[0].value = pokemon.stats.hp;
+        statInputs[1].value = pokemon.stats.attack;
+        statInputs[2].value = pokemon.stats.defense;
+
+        imageInput.value = pokemon.image;
+        descriptionInput.value = pokemon.description;
+
+        // Modifier le titre du formulaire
+        const formTitle = form.querySelector("h2");
+
+        if (formTitle) {
+            formTitle.textContent = "Modifier une créature";
+        }
+
+        // Modifier le bouton submit
+        button.textContent = "Modifier";
+
+        // Afficher le formulaire
+        form.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        // Valider les données chargées
+        validateForm();
+
+    } catch (error) {
+
+        console.error("Erreur :", error);
+
+        showMessage(
+            "Impossible de récupérer la créature."
+        );
+
+    } finally {
+
+        hideLoading();
+    }
+});
 
 // =====================================================
 // INPUT : VALIDATION + SESSION STORAGE
@@ -610,16 +767,15 @@ form.addEventListener("input", function () {
 
 });
 
-
 // =====================================================
-// SUBMIT : POST /CREATURES
+// SUBMIT : AJOUT OU MODIFICATION
 // =====================================================
 
 form.addEventListener("submit", async function (e) {
 
     e.preventDefault();
 
-    // Vérifier la validation
+    // Vérification de la validation
     if (!validateForm()) {
         return;
     }
@@ -629,7 +785,7 @@ form.addEventListener("submit", async function (e) {
     // Convertir les statistiques en nombres
     data.stats.hp = Number(data.stats.hp);
     data.stats.attack = Number(data.stats.attack);
-    data.stats.defence = Number(data.stats.defence);
+    data.stats.defense = Number(data.stats.defense);
 
     button.disabled = true;
 
@@ -638,52 +794,119 @@ form.addEventListener("submit", async function (e) {
 
     try {
 
-        // POST /creatures
-        const newCreature = await ajouterCreature(data);
+        let result;
 
-        // Ajouter à la liste locale
-        addCreatures([newCreature]);
+        // ==========================================
+        // MODE MODIFICATION
+        // ==========================================
 
-        // Mettre à jour la variable
+        if (editingCreatureId !== null) {
+
+            // PUT /creatures/:id
+            result = await modifierCreature(
+                editingCreatureId,
+                data
+            );
+
+            showMessage(
+                "Créature modifiée avec succès !"
+            );
+
+        }
+
+        // ==========================================
+        // MODE AJOUT
+        // ==========================================
+
+        else {
+
+            // POST /creatures
+            result = await ajouterCreature(data);
+
+            showMessage(
+                "Créature ajoutée avec succès !"
+            );
+        }
+
+
+        // ==========================================
+        // METTRE À JOUR LES DONNÉES
+        // ==========================================
+
+        const updatedCreatures = await chargerPokemon();
+
+        setCreatures(updatedCreatures);
+
         creatures = getCreatures();
 
-        // Afficher la liste
-        afficherPokemon(creatures);
+        setinitialCreatures(updatedCreatures);
+
+        initialcreatures = getinitialCreatures();
+
+
+        // ==========================================
+        // RAFRAÎCHIR L'AFFICHAGE
+        // ==========================================
+
+        await appliquerFiltres();
 
         updateTeamButtons();
 
-        // Effacer le brouillon
+
+        // ==========================================
+        // SUPPRIMER LE BROUILLON
+        // ==========================================
+
         sessionStorage.removeItem(FORM_STORAGE_KEY);
 
-        // Réinitialiser le formulaire
+
+        // ==========================================
+        // RÉINITIALISER LE FORMULAIRE
+        // ==========================================
+
         form.reset();
 
-        // Réinitialiser les bordures
-        const fields = [
-            name,
-            type,
-            stat[0],
-            stat[1],
-            stat[2]
-        ];
+        editingCreatureId = null;
 
-        fields.forEach(field => {
+        // Garder recherche, filtre et tri
+        await rechargerGrille();
+
+        // Restaurer le titre
+        const formTitle = form.querySelector("h2");
+
+        if (formTitle) {
+            formTitle.textContent = "Ajouter une créature";
+        }
+
+        // Restaurer le texte du bouton
+        button.textContent = "Ajouter";
+
+
+        // Réinitialiser les bordures
+        [
+            nameInput,
+            typeInput,
+            statInputs[0],
+            statInputs[1],
+            statInputs[2]
+        ].forEach(field => {
             field.style.border = "";
         });
 
-        // Effacer les messages
+
+        // Effacer les messages d'erreur
         errorMessage.forEach(message => {
             message.textContent = "";
         });
 
-        showMessage("Créature ajoutée avec succès !");
-
     } catch (error) {
 
-        console.error("Erreur lors de l'ajout :", error);
+        console.error("Erreur :", error);
 
         showMessage(
-            "Erreur : impossible d'ajouter la créature."
+            editingCreatureId !== null
+                ? "Erreur : impossible de modifier la créature."
+                : "Erreur : impossible d'ajouter la créature."
         );
 
     } finally {

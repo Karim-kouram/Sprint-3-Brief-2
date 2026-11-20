@@ -135,3 +135,15 @@ export async function ajouterCreature(data) {
         data
     );
 }
+
+export async function modifierCreature(id, data) {
+    return await request(
+        "PUT",
+        `/creatures/${id}`,
+        data
+    );
+}
+
+export async function supprimerCreature(id) {
+    return await request("DELETE", `/creatures/${encodeURIComponent(id)}`);
+}
